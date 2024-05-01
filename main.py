@@ -113,4 +113,4 @@ s.connect(("8.8.8.8", 80))
 print("\033[F\033[Kweb UI can be found at http://localhost:" + str(port) + " or http://" +  s.getsockname()[0] + ":" + str(port))
 cli = sys.modules['flask.cli']
 cli.show_server_banner = lambda *x: None
-socketio.run(app, host="0.0.0.0", port=port, debug=False, log_output=False)
+socketio.run(app, host="0.0.0.0", port=port, debug=False, log_output=False, allow_unsafe_werkzeug=True)
