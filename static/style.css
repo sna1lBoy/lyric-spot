@@ -1,0 +1,28 @@
+
+:root {
+    --default-font-size: 40px;
+    --phone-font-size: 20px;
+  }
+
+@font-face {
+    font-family: "circular-black";
+    src: URL("font.ttf") format("truetype");
+  }
+
+body {
+    background-color: rgb(8,10,10);
+  }
+
+div {
+    color: white;
+    font-size: var(--default-font-size);
+    font-family: "circular-black";
+  }
+
+  @supports (--css: variables) {
+    @media only screen and (max-width: 600px) {
+      div {
+        font-size: var(--phone-font-size);
+      }
+    }
+  }

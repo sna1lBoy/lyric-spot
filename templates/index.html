@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lyric spot</title>
+    <!-- auto updater script with backend, DO NOT TOUCH -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            function updateLyrics() {
+                $.get("/update", function(data) {
+                    $("#lyrics").html(data.content);
+                });
+            }
+            setInterval(updateLyrics, 1000);
+        });
+    </script>
+</head>
+<body>
+    <!-- socketio script for backend, DO NOT TOUCH -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        socket.emit('webpage_status', 'opened');
+        window.onbeforeunload = function() { socket.emit('webpage_status', 'closed'); };
+    </script>
+    <body>
+        <!-- lyrics are automatically put here by the backend, DO NOT TOUCH -->
+        <div id="lyrics"></div>
+</body>
+</html>
