@@ -21,7 +21,7 @@ def formatGeniusLyrics(lyrics, artist):
 
         # remove ticket ad
         lyrics = re.sub(r'\$[0-9]+', '$', lyrics)
-        lyrics = lyrics.replace("See" + artist + "LiveGet tickets as low as $", "")
+        lyrics = lyrics.replace("See " + artist + " LiveGet tickets as low as $", "")
 
         return lyrics
     
