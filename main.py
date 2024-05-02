@@ -76,7 +76,7 @@ def lyricsLoop():
 
                     # format lyrics if there are any
                     if not error:
-                        lyrics = webUiHelpers.formatGeniusLyrics(lyrics)
+                        lyrics = webUiHelpers.formatGeniusLyrics(lyrics, artist)
                         
                         # check if cache limit is being reached
                         cache = os.listdir("files/cache")
