@@ -1,5 +1,8 @@
+import re
+
+
 # removes artifacts from webscraping
-def formatGeniusLyrics(lyrics):
+def formatGeniusLyrics(lyrics, artist):
 
     # remove header
     index = lyrics.find("Lyrics")
@@ -16,6 +19,11 @@ def formatGeniusLyrics(lyrics):
                         
         # remove suggestions
         lyrics = lyrics.replace("You might also like", "")
+
+        # remove ticket ad
+        lyrics = re.sub(r'\$[0-9]+', '$', lyrics)
+        lyrics = lyrics.replace("See" + artist + "liveGet tickets as low as $", "")
+
         return lyrics
     
 # edits a config value
