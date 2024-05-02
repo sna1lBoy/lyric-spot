@@ -25,6 +25,11 @@ port = 3232
 refresh rate = 10
 cache size = 100
 
+[customization]
+font size = 40
+font color = #ffffff
+background color = #080a0a
+
 [spotify]
 refresh token = 
 client id = 
@@ -34,11 +39,12 @@ redirect uri = http://localhost:8888/callback
 [genius]
 client access token = 
 ```
-four of these values are pre-defined for you and don't need to be changed unless you have a specific reason to
+most of these values are pre-defined for you and don't need to be changed unless you have a specific reason to
 - port: the port number to find lyric spot on; change it if it contradicts with another program
 - refresh rate: how often lyric spot makes the API calls needed to see if it needs to update the webpage (in seconds); try and go as big of an integer as comfortably possible if you want to fiddle with it, otherwise 10 seconds was perfect in my testing
 - cache size: how many song lyrics is lyric spot allowed to store on the device, especially useful if you like to listen to things on loop; a song file is roughly 10KB so this is allocating about 1MB towards lyric spot but lower it if that's too much
 - redirect uri: for spotify auth protocol; again change it if it conflicts with something
+- everything under `customization` changes the look of lyric spot
 
 of the four undefined values, you only need to add values for three of them. for the first two, client id and secret, we need to set up a spotify application. visit https://developer.spotify.com/ and sign up/in. go to your dashboard and click "create app", then you'll be prompted to fill in many info boxes but lyric spot only cares about one. give the app whatever name and description you want and then scroll down to "redirect URI". in this box paste the URI you have set in the config. now create the app and go into it's settings and you should see the client ID. paste that into the config and click to reveal the client secret and do the same thing.
 

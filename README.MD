@@ -12,7 +12,7 @@ bugs are bound to happen especially with a single developer managing multiple AP
 lyric spot is primarily a tool meant to help me understand music with my hearing loss so development will center on that premise. that being said, please put any ideas or suggestions in the issues tab and i'll try to get to them.
 
 here are the features i'm currently planning on implementing:
-- using the web UI for initial setup instead of terminal in order to make the installation process as easy as possible for non-techys, as well as adding credintials into the settings menu as a byproduct
+- using the web UI for initial setup instead of terminal in order to make the installation process as easy as possible for non-techys, as well as adding credentials into the settings menu as a byproduct
 - firefox and chrome extensions; gives users the option to choose a lite version of lyric spot if they're not interested in they whole installation process
     - pros: don't need to set up python or constantly run a python script on your machine
     - cons: lyrics can only be accessed from the extension page on that specific browser on that specific machine, may be slower due to running in a browser, may not be able to cache lyrics as well

@@ -1,22 +1,12 @@
-
-:root {
-    --default-font-size: 40px;
-    --phone-font-size: 20px;
-  }
-
-  @font-face {
-    font-family: "circular-black";
-    src: url("font.ttf") format("truetype");
+@font-face {
+  font-family: "circular-black";
+  src: url("font.ttf") format("truetype");
 }
 
-body {
-    background-color: rgb(8,10,10);
-  }
-
 .lyrics {
-    color: white;
-    font-size: var(--default-font-size);
     font-family: "circular-black";
+    position: relative;
+    z-index: 2;
   }
 
 .hidden {
@@ -45,7 +35,7 @@ body {
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
-  width: 300px;
+  width: 350px;
   color: white;
   font-size: 15px;
   font-family: "circular-black";
@@ -60,12 +50,4 @@ body {
 .setting input[type="text"] {
   margin-left: 5px;
   width: 50px;
-}
-
-@supports (--phone-font-size: 20px) {
-  @media only screen and (max-width: 600px) {
-      .lyrics {
-          font-size: var(--phone-font-size);
-     }
-  }
 }

@@ -19,7 +19,7 @@
         });
     </script>
 </head>
-<body>
+<body style="background-color: {{ backgroundColor }};">
     <!-- socketio script for backend, DO NOT TOUCH -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
     <script>
@@ -29,26 +29,41 @@
     </script>
 
     <!-- settings html -->
-    <button class="settingsToggle"onclick= "toggleSettings()" style="float: right;">⚙️</button>
-    <div id="settingsBox" class="hidden" style="float: right;">
+    <button class="settingsToggle"onclick= "toggleSettings()" style="z-index: 11; position: absolute; right: 10px; top: 10px;">⚙️</button>
+    <div id="settingsBox" class="hidden" style="  z-index: 10; position: absolute; right: 0px; top: 0px;">
         <div class="boxWrapper">
             <form id="settingsform" method="POST" action="/saveSettings">
+                <p style="font-size: 20px;">behavior</p>
                 <div class="setting">
                     <p>port number (requires restart)</p>
-                    <input type="text" name="port" value="{{port}}">
+                    <input type="text" name="port" value="{{ port }}">
                 </div>
                 <div class="setting">
                     <p>refresh rate (in seconds)</p>
-                    <input type="text" name="refreshRate" value="{{refreshRate}}">
+                    <input type="text" name="refreshRate" value="{{ refreshRate }}">
                 </div>
                 <div class="setting">
                     <p>cache size (in number of songs)</p>
-                    <input type="text" name="cacheSize" value="{{cacheSize}}">
+                    <input type="text" name="cacheSize" value="{{ cacheSize }}">
+                </div>
+                <p style="font-size: 20px;">appearance</p>
+                <div class="setting">
+                    <p>font size</p>
+                    <input type="text" name="fontSize" value="{{ fontSize }}">
+                </div>
+                <div class="setting">
+                    <p>font color</p>
+                    <input type="color" name="fontColor" value="{{ fontColor }}">
+                </div>   
+                <div class="setting">
+                    <p>background color</p>
+                    <input type="color" name="backgroundColor" value="{{ backgroundColor }}">
                 </div>    
                 <div class="setting">
                     <button type="submit" class="settingsButton">save settings</button>
                 </form>      
                     <form method="POST" action="/clearCache"><button type="submit" id="cacheButton" class="settingsButton">clear cache</button></form>
+                    <form method="POST" action="/resetSettings"><button type="submit" id="resetButton" class="settingsButton">reset settings</button></form>
                 </div>
         </div>
     </div>
@@ -68,6 +83,6 @@
     </script>
 
      <!-- lyrics are automatically put here by the backend, DO NOT TOUCH -->
-    <div id="lyrics" class="lyrics"></div>
-        
+     <div id="lyrics" class="lyrics" style="font-size: {{ fontSize }}px; color: {{ fontColor }};"></div>
+
 </html>
