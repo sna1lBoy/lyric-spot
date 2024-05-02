@@ -45,7 +45,19 @@ of the four undefined values, you only need to add values for three of them. for
 the last value is the client access token, which is much simpler. go to https://genius.com/api-clients and sign in/up. create a new client and give it a name and url (i used the same one as spotify), then click to generate an access token and paste it into the config.
 
 # step 3: authorize the application
-now that you've given lyric spot the info it needs to run correctly, it's finally time to run it! ...but wait, there's more! you'll need to generate an authorization code so spotify knows you give lyric spot permission to make API calls. when first booted, lyric spot will see that you left the refresh token blank and ask you to visit an accounts.spotify link. a few seconds after you open it, you should be redirected to a blank page. but check the url and you should see "code" near the beginning of it. copy everything after the equals sign and paste it into the console. if you did that as well as step 2 correctly, you should get a green message saying lyric spot is now continuing normally and you're free to visit the web UI at the printed address. otherwise, make sure your spotify application is set up correctly with the config and try again.
+now that you've given lyric spot the info it needs to run correctly, it's finally time to run it! ...but wait, there's more! you'll need to generate an authorization code so spotify knows you give lyric spot permission to make API calls. 
+
+to run lyric spot, you'll need to use one of three commands depending on your python version
+```
+// example running
+cd lyricSpot // first, make sure you're running it from the same directory of main.py or else it will not be able to find the files
+py main.py
+python3 main.py
+python main.py
+
+```
+
+when first booted, lyric spot will see that you left the refresh token blank and ask you to visit an accounts.spotify link. a few seconds after you open it, you should be redirected to a blank page. but check the url and you should see "code" near the beginning of it. copy everything after the equals sign and paste it into the console. if you did that as well as step 2 correctly, you should get a green message saying lyric spot is now continuing normally and you're free to visit the web UI at the printed address. otherwise, make sure your spotify application is set up correctly with the config and try again.
 
 # step 4: optional side quests
 now you've successfully set up lyric spot on one of your devices and can access it on the same network from any device with a web browser. but what if you didn't have to manually launch it every time you turned on the host device? or what if you could access it outside your home network? this is were services and tunnels come in to play. if you're interested in these ideas, here are some materials to get you started:

@@ -4,25 +4,68 @@
     --phone-font-size: 20px;
   }
 
-@font-face {
+  @font-face {
     font-family: "circular-black";
-    src: URL("font.ttf") format("truetype");
-  }
+    src: url("font.ttf") format("truetype");
+}
 
 body {
     background-color: rgb(8,10,10);
   }
 
-div {
+.lyrics {
     color: white;
     font-size: var(--default-font-size);
     font-family: "circular-black";
   }
 
-  @supports (--css: variables) {
-    @media only screen and (max-width: 600px) {
-      div {
-        font-size: var(--phone-font-size);
-      }
-    }
+.hidden {
+    display: none;
+}
+
+.settingsToggle {
+  padding: 25px;
+  border: none;
+  background: none;
+  font-size: 25px;
+}
+
+.settingsButton {
+  font-family: "circular-black";
+  font-size: 15px;
+  padding: 10px;
+  border: none;
+  background: rgb(8, 10, 10);
+  border-radius: 10px;
+  color: white;
+}
+
+.boxWrapper {
+  background-color: rgb(38,40,40);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  color: white;
+  font-size: 15px;
+  font-family: "circular-black";
+}
+
+.setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.setting input[type="text"] {
+  margin-left: 5px;
+  width: 50px;
+}
+
+@supports (--phone-font-size: 20px) {
+  @media only screen and (max-width: 600px) {
+      .lyrics {
+          font-size: var(--phone-font-size);
+     }
   }
+}

@@ -27,8 +27,47 @@
         socket.emit('webpage_status', 'opened');
         window.onbeforeunload = function() { socket.emit('webpage_status', 'closed'); };
     </script>
-    <body>
-        <!-- lyrics are automatically put here by the backend, DO NOT TOUCH -->
-        <div id="lyrics"></div>
-</body>
+
+    <!-- settings html -->
+    <button class="settingsToggle"onclick= "toggleSettings()" style="float: right;">⚙️</button>
+    <div id="settingsBox" class="hidden" style="float: right;">
+        <div class="boxWrapper">
+            <form id="settingsform" method="POST" action="/saveSettings">
+                <div class="setting">
+                    <p>port number (requires restart)</p>
+                    <input type="text" name="port" value="{{port}}">
+                </div>
+                <div class="setting">
+                    <p>refresh rate (in seconds)</p>
+                    <input type="text" name="refreshRate" value="{{refreshRate}}">
+                </div>
+                <div class="setting">
+                    <p>cache size (in number of songs)</p>
+                    <input type="text" name="cacheSize" value="{{cacheSize}}">
+                </div>    
+                <div class="setting">
+                    <button type="submit" class="settingsButton">save settings</button>
+                </form>      
+                    <form method="POST" action="/clearCache"><button type="submit" id="cacheButton" class="settingsButton">clear cache</button></form>
+                </div>
+        </div>
+    </div>
+        
+    <!-- settings script -->
+    <script>
+
+        // hide and show the settings box
+        function toggleSettings() {
+            var div = document.getElementById("settingsBox");
+            if (div.style.display === "none") {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        }
+    </script>
+
+     <!-- lyrics are automatically put here by the backend, DO NOT TOUCH -->
+    <div id="lyrics" class="lyrics"></div>
+        
 </html>

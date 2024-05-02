@@ -1,4 +1,4 @@
-import requests, base64; from urllib.parse import urlencode; from datetime import datetime
+import requests, base64, libraries.webUiHelpers as webUiHelpers; from urllib.parse import urlencode; from datetime import datetime
 
 # use auth token to generate a refresh token and store it in the config
 def authScript(clientId, clientSecret, redirectUri):
@@ -13,20 +13,9 @@ def authScript(clientId, clientSecret, redirectUri):
     if response.ok:
         print("\033[92m\nprogram authorized, now will run as normal\n\033[0m")
         refreshToken = response.json()["refresh_token"]
-    
-        # writing refresh token to config
-        file = open("files/config.ini", "r")
-        lines = file.readlines()
-        file.close()
-
-        file = open("files/config.ini", "w")
-        for line in lines:
-            if line.startswith("refresh token ="):
-                line = "refresh token = " + refreshToken + "\n"
-            file.write(line)
-        file.close()
+        webUiHelpers.updateConfig("refresh token", refreshToken)
         return refreshToken
-    
+        
     # the user fucked up, tell them that they did
     else:
         print("\033[91m\nsomething went wrong! make sure your application info is correct and that you're pasting the entire auth code then try running this script again\033[0m")
