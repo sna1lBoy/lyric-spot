@@ -5,6 +5,17 @@ lyric spot is developed with python 3.11.7 and the external libraries flask 3.0.
 
 lyric spot will more than likely run normally if you either already have a somewhat recent python release and keep PIP and it's installs up to date or you newly downloaded the recent python release and all the required libraries because you didn't already have python and/or the libraries installed. however, if you're having issues with installation or want to set up a virtual environment for lyric spot then those are the specs.
 
+to install any external libraries you're missing, or all of them in the case of a new python install, open the console and run these commands
+```
+// note that this example uses "py", that's the most likely command for python if you're on windows
+// if on a *nix system try "python3" but if neither of those two work then try "python"
+py -m pip install flask
+py -m pip install flask-socketio
+py -m pip install requests
+py -m pip install lyricsgenius
+py -m pip install urllib3 
+```
+
 if you want to know more in-depth about setting up python, please refer to the python organization's documentation about their software (especially the ones on [downloading python](https://wiki.python.org/moin/BeginnersGuide/Download) and [virtual environments](https://docs.python.org/3/tutorial/venv.html))
 
 # step 1: download the source code
@@ -53,7 +64,7 @@ the last value is the client access token, which is much simpler. go to https://
 # step 3: authorize the application
 now that you've given lyric spot the info it needs to run correctly, it's finally time to run it! ...but wait, there's more! you'll need to generate an authorization code so spotify knows you give lyric spot permission to make API calls. 
 
-to run lyric spot, you'll need to use one of three commands depending on your python version
+to run lyric spot, you'll need to use one of three previously mentioned commands depending on your python version
 ```
 // example running
 cd lyricSpot // first, make sure you're running it from the same directory of main.py or else it will not be able to find the files
