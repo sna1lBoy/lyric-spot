@@ -1,5 +1,5 @@
 # lyric spot
-<img align="left" width="100" height="100" style="padding-right: 20px;" src="local/static/favicon.ico"> i believe in the radical idea that accessibility features shouldn't be locked behind a paywall, but what do i know? i'm just a silly lil' open source developer guy with a hearing disability, not a multi ~~millionaire~~ billionaire CEO that pays artists pennies for their work that makes his platform possible... anyways for [totally unrelated](https://www.theverge.com/2023/9/5/23860124/spotify-lyrics-premium-only-feature) reasons i'm proud to introduce lyric spot!
+<img align="left" width="100" height="100" style="padding-right: 20px;" src="static/favicon.ico"> i believe in the radical idea that accessibility features shouldn't be locked behind a paywall, but what do i know? i'm just a silly lil' open source developer guy with a hearing disability, not a multi ~~millionaire~~ billionaire CEO that pays artists pennies for their work that makes his platform possible... anyways for [totally unrelated](https://www.theverge.com/2023/9/5/23860124/spotify-lyrics-premium-only-feature) reasons i'm proud to introduce lyric spot!
 
 <br>
 
