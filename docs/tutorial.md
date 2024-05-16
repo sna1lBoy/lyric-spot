@@ -1,6 +1,6 @@
 # lyric spot installation tutorial
 
-# step 0: prepare python
+## step 0: prepare python
 lyric spot is developed with python 3.11.7 and the external libraries flask 3.0.0, flask-socketio 5.3.6, requests 2.31.0, lyricsgenius 3.0.1, and urllib3 2.0.4
 
 lyric spot will more than likely run normally if you either already have a somewhat recent python release and keep PIP and it's installs up to date or you newly downloaded the recent python release and all the required libraries because you didn't already have python and/or the libraries installed. however, if you're having issues with installation or want to set up a virtual environment for lyric spot then those are the specs.
@@ -18,8 +18,8 @@ py -m pip install urllib3
 
 if you want to know more in-depth about setting up python, please refer to the python organization's documentation about their software (especially the ones on [downloading python](https://wiki.python.org/moin/BeginnersGuide/Download) and [virtual environments](https://docs.python.org/3/tutorial/venv.html))
 
-# step 1: download the source code
-because lyric spot is based in python, the same code can be run the same way regardless of device as long as python is installed correctly. if you want a copy of the documentation or a quick and dirty install then download the zip from the top of the github repo and unzip it, otherwise you can find the source code without the fluff inside the releases section so download and extract that tarball instead. to download with the console, use `curl` or `wget` to download the source code and `tar` to extract
+## step 1: download the source code
+because lyric spot is based in python, the same code can be run the same way regardless of device as long as python is installed correctly. if you want a copy of the documentation or a quick and dirty install then download the zip from the top of the github repo and unzip it, otherwise you can find the source code without the fluff inside the releases section so [download](https://github.com/sna1lBoy/lyric-spot/releases/latest/download/lyricSpot.tar.gz) and extract that tarball instead. to download with the console, use `curl` or `wget` to download the source code and `tar` to extract
 
 ```
 // example headless download
@@ -27,7 +27,7 @@ wget https://github.com/sna1lBoy/lyric-spot/releases/latest/download/lyricSpot.t
 tar -xvzf lyricSpot.tar.gz
 ```
 
-# step 2: fill in config.ini
+## step 2: fill in config.ini
 if you open the `files` directory in the source code file, you'll find `config.ini` which will look like this
 
 ```
@@ -61,7 +61,7 @@ of the four undefined values, you only need to add values for three of them. for
 
 the last value is the client access token, which is much simpler. go to https://genius.com/api-clients and sign in/up. create a new client and give it a name and url (i used the same one as spotify), then click to generate an access token and paste it into the config.
 
-# step 3: authorize the application
+## step 3: authorize the application
 now that you've given lyric spot the info it needs to run correctly, it's finally time to run it! ...but wait, there's more! you'll need to generate an authorization code so spotify knows you give lyric spot permission to make API calls. 
 
 to run lyric spot, you'll need to use one of three previously mentioned commands depending on your python version
@@ -76,7 +76,7 @@ python main.py
 
 when first booted, lyric spot will see that you left the refresh token blank and ask you to visit an accounts.spotify link. a few seconds after you open it, you should be redirected to a blank page. but check the url and you should see "code" near the beginning of it. copy everything after the equals sign and paste it into the console. if you did that as well as step 2 correctly, you should get a green message saying lyric spot is now continuing normally and you're free to visit the web UI at the printed address. otherwise, make sure your spotify application is set up correctly with the config and try again.
 
-# step 4: optional side quests
+## step 4: optional side quests
 now you've successfully set up lyric spot on one of your devices and can access it on the same network from any device with a web browser. but what if you didn't have to manually launch it every time you turned on the host device? or what if you could access it outside your home network? this is were services and tunnels come in to play. if you're interested in these ideas, here are some materials to get you started:
 - https://www.wireguard.com/quickstart/
 - https://www.procustodibus.com/blog/2021/04/wireguard-point-to-site-port-forwarding/

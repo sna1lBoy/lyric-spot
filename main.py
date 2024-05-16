@@ -101,7 +101,6 @@ def lyricsLoop():
             break
         time.sleep(refreshRate)
 
-
 # load index html for showing lyrics
 @app.route("/")
 def index():
@@ -160,6 +159,7 @@ def resetSettings():
 @app.route("/update")
 def update_content():
     global lyrics
+    
     return jsonify(content=lyrics.replace("\n", "<br>"))
 
 # sockets so that the lyric loop only runs when this page is open to minimize api abuse (spotify deserves it lmao have you seen the api flow chart? (https://developer.spotify.com/images/documentation/web-api/auth-code-flow.png) but i don't want them banning my ass lol)

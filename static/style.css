@@ -14,13 +14,18 @@
 }
 
 .settingsToggle {
-  padding: 25px;
   border: none;
   background: none;
   font-size: 25px;
+  z-index: 11;
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  cursor: pointer;
 }
 
 .settingsButton {
+  cursor: pointer;
   font-family: "circular-black";
   font-size: 15px;
   padding: 10px;
@@ -50,4 +55,8 @@
 .setting input[type="text"] {
   margin-left: 5px;
   width: 50px;
+}
+
+.setting input[type="color"] {
+  cursor: pointer;
 }
