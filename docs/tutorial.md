@@ -19,11 +19,11 @@ py -m pip install urllib3
 if you want to know more in-depth about setting up python, please refer to the python organization's documentation about their software (especially the ones on [downloading python](https://wiki.python.org/moin/BeginnersGuide/Download) and [virtual environments](https://docs.python.org/3/tutorial/venv.html))
 
 ## step 1: download the source code
-because lyric spot is based in python, the same code can be run the same way regardless of device as long as python is installed correctly. if you want a copy of the documentation or a quick and dirty install then download the zip from the top of the github repo and unzip it, otherwise you can find the source code without the fluff inside the releases section so [download](https://github.com/sna1lBoy/lyric-spot/releases/latest/download/lyricSpot.tar.gz) and extract that tarball instead. to download with the console, use `curl` or `wget` to download the source code and `tar` to extract
+because lyric spot is based in python, the same code can be run the same way regardless of device as long as python is installed correctly. if you want a copy of the documentation or a quick and dirty install then download the zip from the top of the github repo and unzip it, otherwise you can find the source code without the fluff inside the releases section so [download](https://codeberg.org/snailboy/lyric-spot/releases/download/latest/lyricSpot.tar.gz) and extract that tarball instead. to download with the console, use `curl` or `wget` to download the source code and `tar` to extract
 
 ```
 // example headless download
-wget https://github.com/sna1lBoy/lyric-spot/releases/latest/download/lyricSpot.tar.gz
+wget https://codeberg.org/snailboy/lyric-spot/releases/download/latest/lyricSpot.tar.gz
 tar -xvzf lyricSpot.tar.gz
 ```
 
